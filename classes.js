@@ -30,6 +30,27 @@
 */
 
 //Code Here
+class Employee {
+    constructor(first_name, last_name, email, age){
+      this.first_name = first_name;
+      this.last_name = last_name;
+      this.email = email;
+      this.age = age;
+    }
+    makeWidget(){
+      console.log(`${this.first_name} ${this.last_name} widget`)
+    }
+}
+
+const newEmployee = new Employee('Dave', 'Smith', 'dave@smith.com', 25);
+
+newEmployee.makeWidget();
+
+
+
+
+
+
 
 
 ////////// PROBLEM 2 //////////
@@ -48,6 +69,19 @@
 */
 
 //Code Here
+
+class Manager extends Employee {
+  constructor(first_name, last_name, email, age, reports, hire, accepts, fire){
+    super(first_name, last_name, email, age)
+    this.reports = reports;
+    this.hire = hire;
+    this.accepts = accepts;
+    this.fire = fire;
+  }
+}
+
+
+
 
 
 ////////// PROBLEM 3 //////////
@@ -72,6 +106,38 @@
 */
 
 //Code Here
+
+// class ProgressiveManager extends Manager {
+//   constructor(first_name, last_name, email, age, reports, hire, accepts, fire);{
+//   super(first_name, last_name, email, age, reports, hire, accepts, fire); 
+//   this.title = 'not a manager';
+//   this.bonus = 0;
+//   }
+
+
+// hires () {
+//   if (reports === 0); {
+//     return 'Not a manager';
+//   } else if (reports === 1 && reports < 3); {
+//     return 'Barely Manager';
+//   } else if (reports === 4 && reports < 10); {
+//     return 'Mostly Manager'
+//   } else if (reports === 11 && reports < 50); {
+//     return 'Manager'
+//   } else if (reports === 51 && reports < 100); {
+//     return 'Manager Plus'
+//   } else {
+//     return 'Bestest Manager'
+//   }
+// }
+
+// fires () {
+//   fire--;
+//   console.log(bonus += 100)
+// }
+// }
+
+// const newManager = new Manager()
 
 
 
@@ -100,4 +166,26 @@
 
 //Code Here
 
+class Machines {
+  constructor(){
+  this.widgets_made_count = 0;
+  this.wear_and_tear = 0;
+  this.needs_reboot = false;
+  }
+  makeWidgets(num){
+    return this.widgets_made_count + num;
+  }
 
+  fixMachine(){
+    return this.needs_reboot === true;
+  }
+
+  reboot(){
+    return this.wear_and_tear -=10
+    return this.needs_reboot === false;
+  }
+}
+
+const widget = new Machines();
+
+Machines.widget();

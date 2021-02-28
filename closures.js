@@ -24,6 +24,9 @@ function outer() {
   
 // Code Here
 
+const inner = outer();
+
+inner();
 
 
 //Once you do that, invoke inner.
@@ -53,7 +56,9 @@ function callFriend(name) {
 
 //Code Here
 
+const callJake = callFriend('Jake')
 
+callJake(435-555-9248);
 
 ////////// PROBLEM 3 //////////
 
@@ -63,14 +68,26 @@ function callFriend(name) {
 
 //Code Here
 
+function makeCounter(){
+  let count = 1;
+
+  function addOne() {
+    return count++
+  };
+
+  return addOne;
+}
 
 
-//Uncomment this once you make your function
-//   var count = makeCounter();
-//   count(); // 1
-//   count(); // 2
-//   count(); // 3
-//   count(); // 4
+
+
+
+// Uncomment this once you make your function
+  var count = makeCounter();
+  count(); // 1
+  count(); // 2
+  count(); // 3
+  count(); // 4
 
 
 
@@ -85,15 +102,22 @@ function callFriend(name) {
   http://stackoverflow.com/questions/17776940/javascript-module-pattern-with-example?answertab=votes#tab-top
 */
 
-function counterFactory(value) {
-  // Code here.
+// function counterFactory(value) {
+//   // Code here. 
+//   function inc(){
+//     return value+=;
+//   }
+  
+//   function dec() {
+//     return value-=;
+//   }
 
-  return {
+//   return {
 
-  };
-}
+//   };
+// }
 
-counter = counterFactory(10);
+// counter = counterFactory(10);
 // counter.inc() // 11
 // counter.inc() // 12
 // counter.inc() // 13
@@ -114,11 +138,17 @@ function motivation( firstname, lastname ) {
 
   // code message function here.
 
+  function message(){
+    return welcomeText + firstname + ' ' + lastname + '.';
+  }
+
   //Uncommment this to return the value of your message function
-  //return message;
+  return message;
 }
 
 var greeting = motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
+
+greeting();
 
 
 
@@ -144,9 +174,14 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
+    publicMethod : function() {
+      return privateMethod();
+    }
+
   };
 })();
 
+module.publicMethod();
 
 
 ////////// PROBLEM 7 //////////
@@ -158,13 +193,21 @@ var module = (function() {
   takeAwayFromSecret should have a parameter that takes away from the secret number returning the updated secret number.
 */
 
-function secretNumber() {
-  var secret = 143;
+// function secretNumber() {
+//   var secret = 143;
 
-  return {
-    // Code here
-  };
-}
+//   return {
+//     // Code here
+//     addToSecret : function(){
+//       return secret++;
+//     }
+//     takeAwayFromSecret : function(){
+//       return secret--;
+//     }
+//   };
+// }
+
+
 
 
 
@@ -187,10 +230,14 @@ function secretNumber() {
 */
 
 function timeOutCounter() {
-  for (var i = 0; i <= 5; i++) {
+  for (let i = 0; i <= 5; i++) {
     setTimeout(function() {
       console.log(i);
     }, i * 1000);
   }
 }
+
 timeOutCounter();
+
+
+
