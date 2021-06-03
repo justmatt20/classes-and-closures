@@ -38,7 +38,7 @@ class Employee {
       this.age = age;
     }
     makeWidget(){
-      console.log(`${this.first_name} ${this.last_name} widget`)
+      console.log(`${this.first_name} ${this.last_name} Widget`)
     }
 }
 
@@ -71,14 +71,20 @@ newEmployee.makeWidget();
 //Code Here
 
 class Manager extends Employee {
-  constructor(first_name, last_name, email, age, reports, hire, accepts, fire){
+  constructor(first_name, last_name, email, age, reports){
     super(first_name, last_name, email, age)
     this.reports = reports;
-    this.hire = hire;
-    this.accepts = accepts;
-    this.fire = fire;
+    
+  }
+
+  hire(newEmployee) {
+    
+  }
+  fire(i){
+    
   }
 }
+Manager()
 
 
 
@@ -166,26 +172,25 @@ class Manager extends Employee {
 
 //Code Here
 
-class Machines {
-  constructor(){
-  this.widgets_made_count = 0;
-  this.wear_and_tear = 0;
-  this.needs_reboot = false;
-  }
-  makeWidgets(num){
-    return this.widgets_made_count + num;
-  }
+// class Machines {
+//   constructor(){
+//   this.widgets_made_count = 0;
+//   this.wear_and_tear = 0;
+//   this.needs_reboot = false;
+//   }
+//   makeWidgets(num){
+//     return this.widgets_made_count + num;
+//   }
 
-  fixMachine(){
-    return this.needs_reboot === true;
-  }
+//   fixMachine(){
+//     return this.needs_reboot === true;
+//   }
 
-  reboot(){
-    return this.wear_and_tear -=10
-    return this.needs_reboot === false;
-  }
-}
+//   reboot(){
+//     return this.wear_and_tear -=10
+    
+//   }
+// }
 
-const widget = new Machines();
+// const widget = new Machines();
 
-Machines.widget();

@@ -101,27 +101,26 @@ function makeCounter(){
   Information on the module pattern available here: 
   http://stackoverflow.com/questions/17776940/javascript-module-pattern-with-example?answertab=votes#tab-top
 */
-
-// function counterFactory(value) {
-//   // Code here. 
-//   function inc(){
-//     return value+=;
-//   }
+let num = 10;
+function counterFactory(num) {
+  // Code here. 
+return{
+ inc: function(){
+    return num ++;
+  },
   
-//   function dec() {
-//     return value-=;
-//   }
+ dec: function() {
+    return num--;
+  }
+}
+  };
 
-//   return {
 
-//   };
-// }
-
-// counter = counterFactory(10);
-// counter.inc() // 11
-// counter.inc() // 12
-// counter.inc() // 13
-// counter.dec() // 12
+counter = counterFactory(10);
+counter.inc() // 11
+counter.inc() // 12
+counter.inc() // 13
+counter.dec() // 12
 
 
 
@@ -133,13 +132,13 @@ function makeCounter(){
   (Hint: don't forget to have a space between the firstname and lastname and a period at the end of the sentence.)
 */
 
-function motivation( firstname, lastname ) {
-  var welcomeText = "You're doing awesome, keep it up";
+function motivation(firstName, lastName) {
+  var welcomeText = "You're doing awesome, keep it up ";
 
   // code message function here.
 
   function message(){
-    return welcomeText + firstname + ' ' + lastname + '.';
+    return welcomeText + firstName + ' ' + lastName + '.';
   }
 
   //Uncommment this to return the value of your message function
@@ -148,7 +147,7 @@ function motivation( firstname, lastname ) {
 
 var greeting = motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
 
-greeting();
+console.log(greeting());
 
 
 
@@ -193,23 +192,24 @@ module.publicMethod();
   takeAwayFromSecret should have a parameter that takes away from the secret number returning the updated secret number.
 */
 
-// function secretNumber() {
-//   var secret = 143;
+function secretNumber(value) {
+  let secret = 143;
 
-//   return {
-//     // Code here
-//     addToSecret : function(){
-//       return secret++;
-//     }
-//     takeAwayFromSecret : function(){
-//       return secret--;
-//     }
-//   };
-// }
+  return {
+    // Code here
+    addToSecret : function(){
+      return secret + value;
+    },
+    takeAwayFromSecret : function(){
+      return secret - value;
+    }
+    
+  };
+}
 
+var secretNum = secretNumber(5)
 
-
-
+console.log(secretNum())
 
 ////////// PROBLEM 8 //////////
   
