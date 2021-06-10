@@ -209,7 +209,7 @@ function secretNumber(value) {
 
 var secretNum = secretNumber(5)
 
-console.log(secretNum())
+console.log(secretNum)
 
 ////////// PROBLEM 8 //////////
   

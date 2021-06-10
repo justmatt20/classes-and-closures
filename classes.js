@@ -38,13 +38,14 @@ class Employee {
       this.age = age;
     }
     makeWidget(){
-      console.log(`${this.first_name} ${this.last_name} Widget`)
+      return `${this.first_name} ${this.last_name} Widget`
     }
 }
 
-const newEmployee = new Employee('Dave', 'Smith', 'dave@smith.com', 25);
+const newEmployee = new Employee('Dallin', 'Anderson', 'dave@smith.com', 25);
 
-newEmployee.makeWidget();
+
+console.log(newEmployee.makeWidget());
 
 
 
@@ -73,18 +74,24 @@ newEmployee.makeWidget();
 class Manager extends Employee {
   constructor(first_name, last_name, email, age, reports){
     super(first_name, last_name, email, age)
-    this.reports = reports;
-    
+    this.reports = [];
   }
 
-  hire(newEmployee) {
-    
-  }
-  fire(i){
-    
-  }
+hire(Employee) {
+  // console.log(this.reports);
+  return this.reports.push(Employee)
 }
-Manager()
+fire(index){
+  return this.reports.splice(0, 1, index)
+}
+// 
+}
+const newManager = new Manager('Sara', 'Smith', 'sara.smith@sm.com', 37, 9)
+
+
+console.log(newManager.hire());
+// console.log(newManager.fire([0]));
+
 
 
 
@@ -113,37 +120,39 @@ Manager()
 
 //Code Here
 
-// class ProgressiveManager extends Manager {
-//   constructor(first_name, last_name, email, age, reports, hire, accepts, fire);{
-//   super(first_name, last_name, email, age, reports, hire, accepts, fire); 
-//   this.title = 'not a manager';
-//   this.bonus = 0;
-//   }
+class ProgressiveManager extends Manager {
+  constructor(first_name, last_name, email, age, reports, hire, accepts, fire) {
+  super(first_name, last_name, email, age, reports, hire, accepts, fire)
+  this.title = 'not a manager';
+  this.bonus = 0;
+  }
 
 
-// hires () {
-//   if (reports === 0); {
-//     return 'Not a manager';
-//   } else if (reports === 1 && reports < 3); {
-//     return 'Barely Manager';
-//   } else if (reports === 4 && reports < 10); {
-//     return 'Mostly Manager'
-//   } else if (reports === 11 && reports < 50); {
-//     return 'Manager'
-//   } else if (reports === 51 && reports < 100); {
-//     return 'Manager Plus'
-//   } else {
-//     return 'Bestest Manager'
-//   }
-// }
+hires () {
+  if (this.reports === 0) {
+    return 'Not a manager'
+  } else if (this.reports >= 1 && this.reports <= 3) {
+    return 'Barely Manager';
+  } else if (this.reports >= 4 && this.reports <= 10) {
+    return  'Mostly Manager'
+  } else if (this.reports >= 11 && this.reports <= 50) {
+    return 'Manager'
+  } else if (this.reports >= 51 && this.reports <= 100) {
+    return 'Manager Plus'
+  } else {
+    return 'Bestest Manager'
+  }
+}
 
-// fires () {
-//   fire--;
-//   console.log(bonus += 100)
-// }
-// }
+fires () {
+  if(Manager)
+  return this.bonus += 100;
+}
+}
 
-// const newManager = new Manager()
+const newProgressive = new ProgressiveManager()
+
+console.log(newProgressive.hires())
 
 
 
